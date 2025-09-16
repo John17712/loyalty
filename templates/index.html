@@ -16,145 +16,155 @@
   </style>
 </head>
 <body>
-  <header class="bg-primary text-white p-3">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center">
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" style="height: 50px;">
-        <h1 class="h4 mb-0 ms-3">Loyalty Group Homes</h1>
-      </div>
-      <nav class="nav">
-        <a class="nav-link text-white" href="{{ url_for('home') }}">Home</a>
-        <a class="nav-link text-white" href="{{ url_for('about') }}">About Us</a>
-        <a class="nav-link text-white" href="{{ url_for('contact') }}">Contact Us</a>
+  <!-- Responsive Navbar -->
+  <header class="bg-primary text-white">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand d-flex align-items-center" href="{{ url_for('home') }}">
+          <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" style="height: 40px;">
+          <span class="ms-2">Loyalty Group Homes</span>
+        </a>
+        <!-- Hamburger toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapsible links -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('contact') }}">Contact Us</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
   </header>
 
+  <!-- Hero Section -->
   <main class="container py-5">
-  <div class="row align-items-center">
-    <div class="col-md-6">
-      <h2 class="mb-3">Welcome to Loyalty Group Homes</h2>
-      <p>
-        Loyalty Group Homes is proud to serve Oregon State with supportive, community-based living environments designed to meet the unique needs of every resident. Our Portland group homes offer a safe, welcoming, and nurturing setting where individuals receive 24/7 care and the encouragement they need to live with dignity and purpose. 
-      </p>
-      <p>
-        At Loyalty Group Homes, we go beyond providing care. We create a true sense of community. Residents are empowered to engage in meaningful activities, build connections, and enjoy opportunities for growth, fun, and contribution. We believe that every person deserves a home where they can feel supported, valued, and inspired to thrive.
-      </p>
-      <p>
-      <a href="/contact">Reach out</a> to Loyalty Group Homes today to learn more about our programs in Multnomah County and how we can support you or your loved one in finding the right place to call home.
-      </p>
-
-      <a href="{{ url_for('contact') }}" class="btn btn-primary mt-3">Join Us Now!</a>
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2 class="mb-3">Welcome to Loyalty Group Homes</h2>
+        <p>
+          Loyalty Group Homes is proud to serve Oregon State with supportive, community-based living environments designed to meet the unique needs of every resident. Our Portland group homes offer a safe, welcoming, and nurturing setting where individuals receive 24/7 care and the encouragement they need to live with dignity and purpose.
+        </p>
+        <p>
+          At Loyalty Group Homes, we go beyond providing care. We create a true sense of community. Residents are empowered to engage in meaningful activities, build connections, and enjoy opportunities for growth, fun, and contribution. We believe that every person deserves a home where they can feel supported, valued, and inspired to thrive.
+        </p>
+        <p>
+          <a href="{{ url_for('contact') }}">Reach out</a> to Loyalty Group Homes today to learn more about our programs in Multnomah County and how we can support you or your loved one in finding the right place to call home.
+        </p>
+        <a href="{{ url_for('contact') }}" class="btn btn-primary mt-3">Join Us Now!</a>
+      </div>
+      <div class="col-md-6">
+        <div class="larger-image">
+          <img src="{{ url_for('static', filename='images/Group_Home.png') }}" class="img-fluid rounded shadow" alt="Group Home">
+        </div>
+      </div>
     </div>
 
-    <div class="col-md-6">
-      <div class="larger-image">
-        <img src="{{ url_for('static', filename='images/Group_Home.png') }}" class="img-fluid rounded shadow" alt="Group Home">
-      </div>
-    </div>
-  </div>
-
-   <section class="mt-5">
-  <h3 class="text-center mb-4">What Our Residents Say</h3>
-  <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-    <div class="carousel-inner">
-
-      <div class="carousel-item active">
-        <div class="testimonial-card">
-          <p>Loyalty Group Homes gave me the support I needed to build my confidence and live independently.</p>
-          <div class="testimonial-author">
-            <img src="{{ url_for('static', filename='images/user1.png') }}" alt="Jordan">
-            <strong>Jordan M.</strong>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="testimonial-card">
-          <p>This home gave me a second chance after foster care. The staff feels like family.</p>
-          <div class="testimonial-author">
-            <img src="{{ url_for('static', filename='images/user2.png') }}" alt="Ashley">
-            <strong>Chris K.</strong>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="testimonial-card">
-          <p>I’ve learned how to cook, manage my money, and even got my first job while here.</p>
-          <div class="testimonial-author">
-            <img src="{{ url_for('static', filename='images/user3.png') }}" alt="Ramon">
-            <strong>Ramon T.</strong>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="testimonial-card">
-          <p>The counselors and staff always believed in me, even when I didn’t believe in myself.</p>
-          <div class="testimonial-author">
-            <img src="{{ url_for('static', filename='images/user4.png') }}" alt="Tracy">
-            <strong>Daniel L.</strong>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="testimonial-card">
-          <p>I finally feel safe and seen. This home gave me a new beginning.</p>
-          <div class="testimonial-author">
-            <img src="{{ url_for('static', filename='images/user5.png') }}" alt="Carlos">
-            <strong>Carlos V.</strong>
-          </div>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <div class="testimonial-card">
-          <p>Loyalty is more than a home—it’s a family. I’ve grown so much here.</p>
-          <div class="testimonial-author">
-            <img src="{{ url_for('static', filename='images/user6.png') }}" alt="Lena">
-            <strong>David R.</strong>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-</section>
-
-
-
-
-
+    <!-- Testimonials Section -->
     <section class="mt-5">
-  <h3 class="text-center mb-4">Life at Loyalty Homes</h3>
-  <div class="row g-3">
-    <div class="col-md-4">
-      <img src="{{ url_for('static', filename='images/daily1.png') }}" class="img-fluid rounded shadow" alt="Life 1">
-    </div>
-    <div class="col-md-4">
-      <img src="{{ url_for('static', filename='images/daily2.png') }}" class="img-fluid rounded shadow" alt="Life 1">
-    </div>
-    <div class="col-md-4">
-      <img src="{{ url_for('static', filename='images/daily3.png') }}" class="img-fluid rounded shadow" alt="Life 1">
-    </div>
-  </div>
-</section>
-</main>
+      <h3 class="text-center mb-4">What Our Residents Say</h3>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
 
+          <div class="carousel-item active">
+            <div class="testimonial-card">
+              <p>Loyalty Group Homes gave me the support I needed to build my confidence and live independently.</p>
+              <div class="testimonial-author">
+                <img src="{{ url_for('static', filename='images/user1.png') }}" alt="Jordan">
+                <strong>Jordan M.</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>This home gave me a second chance after foster care. The staff feels like family.</p>
+              <div class="testimonial-author">
+                <img src="{{ url_for('static', filename='images/user2.png') }}" alt="Ashley">
+                <strong>Chris K.</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>I’ve learned how to cook, manage my money, and even got my first job while here.</p>
+              <div class="testimonial-author">
+                <img src="{{ url_for('static', filename='images/user3.png') }}" alt="Ramon">
+                <strong>Ramon T.</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>The counselors and staff always believed in me, even when I didn’t believe in myself.</p>
+              <div class="testimonial-author">
+                <img src="{{ url_for('static', filename='images/user4.png') }}" alt="Tracy">
+                <strong>Daniel L.</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>I finally feel safe and seen. This home gave me a new beginning.</p>
+              <div class="testimonial-author">
+                <img src="{{ url_for('static', filename='images/user5.png') }}" alt="Carlos">
+                <strong>Carlos V.</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="testimonial-card">
+              <p>Loyalty is more than a home. It’s a family. I’ve grown so much here.</p>
+              <div class="testimonial-author">
+                <img src="{{ url_for('static', filename='images/user6.png') }}" alt="Lena">
+                <strong>David R.</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Life at Loyalty Homes -->
+    <section class="mt-5">
+      <h3 class="text-center mb-4">Life at Loyalty Homes</h3>
+      <div class="row g-3">
+        <div class="col-md-4 col-12">
+          <img src="{{ url_for('static', filename='images/daily1.png') }}" class="img-fluid rounded shadow" alt="Life 1">
+        </div>
+        <div class="col-md-4 col-12">
+          <img src="{{ url_for('static', filename='images/daily2.png') }}" class="img-fluid rounded shadow" alt="Life 2">
+        </div>
+        <div class="col-md-4 col-12">
+          <img src="{{ url_for('static', filename='images/daily3.png') }}" class="img-fluid rounded shadow" alt="Life 3">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
   <footer class="bg-light text-center py-4 mt-4">
     <p class="mb-0">&copy; 2025 Loyalty Group Homes - Portland, Oregon</p>
   </footer>
+
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
