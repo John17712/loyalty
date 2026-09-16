@@ -13,3 +13,10 @@ __pycache__/
 # IDE/Editor files
 .vscode/
 *.DS_Store
+
+# Calendar local storage / private credentials
+appointments.db
+*.sqlite
+*.sqlite3
+google-service-account*.json
+service-account*.json
